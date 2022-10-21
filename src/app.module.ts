@@ -13,8 +13,8 @@ import { KartriderModule } from '@src/kartrider/kartrider.module';
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`,
       validationSchema: Joi.object({
+        LOCAL_SERVER_PORT: Joi.string().required(),
         FRONT_END_URL: Joi.string().required(),
-        SERVER_PORT: Joi.string().required(),
         DISCORD_AUTH_LINK: Joi.string().required(),
         DISCORD_CLIENT_ID: Joi.string().required(),
         DISCORD_CLIENT_SECRET: Joi.string().required(),
