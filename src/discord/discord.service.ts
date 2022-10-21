@@ -22,14 +22,6 @@ export class DiscordService {
 
   async discordAuth({ code }: DiscordAuthQuery): Promise<DiscordAuthOutput> {
     try {
-      console.log('>> auth params logs : ', {
-        client_id: process.env.DISCORD_CLIENT_ID,
-        client_secret: process.env.DISCORD_CLIENT_SECRET,
-        code,
-        grant_type: 'authorization_code',
-        redirect_uri: `${process.env.FRONT_END_URL}`,
-        scope: 'identify',
-      });
       const auth = await axios({
         url: 'https://discord.com/api/oauth2/token',
         method: 'POST',
@@ -58,6 +50,9 @@ export class DiscordService {
           500,
         );
       }
+      console.log('----------------------');
+      console.log('>> error response data : ', err.response);
+      console.log('----------------------');
       return {
         ok: false,
         httpErrorCode: 401,
