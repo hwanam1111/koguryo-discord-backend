@@ -1,6 +1,7 @@
 # dotenv
 .env.dev
 .env.prod
+.env.production
 .env.test
 
 # compiled output
