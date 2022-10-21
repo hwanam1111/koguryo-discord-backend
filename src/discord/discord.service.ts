@@ -50,9 +50,7 @@ export class DiscordService {
           500,
         );
       }
-      console.log('----------------------');
-      console.log('>> error response data : ', err.response);
-      console.log('----------------------');
+
       return {
         ok: false,
         httpErrorCode: 401,
